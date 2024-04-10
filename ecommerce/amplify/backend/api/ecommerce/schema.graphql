@@ -1,0 +1,60 @@
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  email: String!
+  Time: AWSDate
+}
+
+type Order {
+  id: ID!
+  customer: String!
+  user: String!
+  total: Float!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type ProductOrder {
+  id: ID!
+  product_id: String!
+  order_id: String!
+  customer: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type ProcessPaymentResponse {
+  id: ID!
+  cart: [CartItem!]!
+  total: Float!
+  address: String!
+  username: String!
+  email: String!
+}
+
+type CartItem {
+  id: ID!
+  name: String!
+  price: Float!
+  quantity: Int!
+}
+
+input ProcessPaymentInput {
+  id: ID!
+  cart: [CartItemInput!]!
+  total: Float!
+  address: String!
+  token: String!
+}
+
+input CartItemInput {
+  id: ID!
+  name: String!
+  price: Float!
+  quantity: Int!
+}
+
+
+type Mutation {
+  processPayment(input: ProcessPaymentInput!): ProcessPaymentResponse!
+}
+

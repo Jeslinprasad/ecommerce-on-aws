@@ -1,0 +1,16 @@
+{
+  "resourceName": "s3bucketimages",
+  "policyUUID": "303f4bfd",
+  "bucketName": "ecommerced2f0b6165f9340209e8bbe81ae7e9680",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
